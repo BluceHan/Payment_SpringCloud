@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.baizhi</groupId>
+    <artifactId>springcloud_parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-RELEASE</version>
+    <modules>
+        <module>springcloud_01_eureka_server</module>
+        <module>springcloud_02_eureka_client</module>
+        <module>springcloud_03_consulclient</module>
+        <module>springcloud_04_users</module>
+        <module>springcloud_05_orders</module>
+    </modules>
+
+    <!--继承springboot的父项目-->
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+
+    <!--自定义properties属性-->
+    <properties>
+        <spring.cloud-version>Hoxton.SR6</spring.cloud-version>
+    </properties>
+
+    <!--维护版本-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
